@@ -1,0 +1,35 @@
+h2 {
+    text-align: center;
+    color: white;
+    font-size: 3em;
+    text-shadow: 2px 2px 4px #0000005e;
+}
+
+body {
+    background: url(sailboat-hd.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    max-width: 30%;
+    margin: auto;
+    padding-top: 8%;
+}
+#item {
+    border: 2px solid black;
+    margin-left: 8%;
+}
+
+.todo {
+    max-width: 30.5%;
+    border: 2px solid black;
+    margin-left: 8%;
+}
+
+.make_list {
+    float: right;
+    margin-right: 20%;
+}
+
+.roll_dice {
+    margin-left: 8%;
+}

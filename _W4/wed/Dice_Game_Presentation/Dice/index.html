@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image" href="list-64.ico" />
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <title>Dice - Shenanigans</title>
+    </head>
+    <body>
+        <h2>Lazy Dice - Shenanigans</h2>
+        <!-- To Do or Not To Do... The Dice will give an answer-->
+        <div id="dice_div">
+            <input type="text" id="item" size="25" />
+            <button type="button" onclick="add_List_item()">add item!</button>
+
+            <div class="make_list">
+                <img alt="White dice" src="die1.gif" id="[0]" />
+                <br />
+                <button type="button" class="roll_dice" onclick="roll()">
+                    roll the dice
+                </button>
+            </div>
+            <div class="todo">
+                <ul id="todo">
+                    <!-- list items will go here -->
+                </ul>
+            </div>
+        </div>
+        <script src="lazy_Dice.js"></script>
+    </body>
+</html>
