@@ -1,34 +1,37 @@
-function roll() {
-    //history[row] = []; // create the list before we add to it
+let todoItems = [];
 
-    console.log(length);
-    //for (i = 0; i < 5; i++) {
-    random_num = Math.ceil(length * Math.random());
-    //console.log(p, r, i);
-    //history[row][i] = r;
-    document.images[i].src = "die" + random_num + ".gif"; //changed the value for all images on roll function activation
-    // t.value = t.value + r + "\t"; // ----  display the value of the dice in the text area
-    //}
-    // t.value = t.value + "\n";
-    // row++;
+function roll() {
+    let random_number = Math.ceil(todoItems.length * Math.random());
+    document.getElementById("dice").src = "images/die" + random_number + ".gif";
+    setTimeout(function () {
+        msg_alert(random_number);
+    }, 250);
+}
+
+function msg_alert(random_number) {
+    alert(
+        `Looks like you'll have to do number ${random_number} on the todo list!`
+    );
+    alert("YA BUM!");
 }
 //Grabs value, adds item to the list, and clears input field
-function add_List_item() {
-    let new_item = document.getElementById("item").value;
-    if (new_item != "" && new_item != " ") {
-        document.getElementById("todo").innerHTML +=
-            `<li onclick="StrikeThrough(event)">${new_item}</li>`;
+function add_List_Item() {
+    let new_Item = document.getElementById("item").value;
+    if (new_Item != "" && new_Item != " ") {
+        document.getElementById(
+            "todo"
+        ).innerHTML += `<li onclick="StrikeThrough(event)">${new_Item}</li>`;
         document.getElementById("item").value = "";
+        todoItems.push("item");
     }
 }
 
 function StrikeThrough(event) {
-    let list_item = event.target;
+    let list_Item = event.target;
 
-    if (list_item.style.textDecoration === "line-through") {
-        list_item.style.textDecoration = "none";
+    if (list_Item.style.textDecoration === "line-through") {
+        list_Item.style.textDecoration = "none";
     } else {
-        list_item.style.textDecoration = "line-through";
+        list_Item.style.textDecoration = "line-through";
     }
 }
-roll();
