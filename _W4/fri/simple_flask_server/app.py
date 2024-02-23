@@ -61,9 +61,9 @@ def get_student_ages():
 # Returns an array of all students.
 @app.route('/students', methods=['GET'])
 def get_all_students():
-    get_all_students = []
+    all_students = []
     for student in students:
-        get_all_students.append(student)
+        all_students.append(student)
     return jsonify(students)
 
 
