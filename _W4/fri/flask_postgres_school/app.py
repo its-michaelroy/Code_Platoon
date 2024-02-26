@@ -1,8 +1,5 @@
-# Import flask for webserver & jsonify to serve data properly
-# Require SQLAlchemy to connect flask/webserver to the psql database. Allows for access to db & ability to CRUD data.
 from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
-
 
 # Create flask app object
 #  The __name__ variable helps Flask determine the root path for the application
@@ -46,10 +43,24 @@ def get_all_students():
         'last_name': student.last_name,
         'age': student.age,
         'class':{
-            'subject': Subjects.subject[Students.subject]
+            'subject': get_subject(student.subject),
+            'teacher': get_teacher(student.subject)
         }
     } for student in all_students]
     return jsonify(serialized_students)
+
+
+def get_subject(subject):
+    subject = Subjects.query.get(subject)
+    if subject:
+        return subject.subject
+    else: return None
+
+def get_teacher(subject):
+    teacher = Teachers.query.filter_by(subject=subject).first() # Returns the first teacher with the subject.
+    if teacher:
+        return teacher.first_name + ' ' + teacher.last_name
+    else: return None
 
 
 # @app.route('/students', methods=['GET'])
