@@ -27,4 +27,5 @@ submit.addEventListener("click", function () {
 
 resetButton.addEventListener("click", function () {
     location.reload();
+    guess.value = "";
 });
