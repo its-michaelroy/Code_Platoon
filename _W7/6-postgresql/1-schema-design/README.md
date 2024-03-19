@@ -1,0 +1,5 @@
+# Schema Design
+
+
+- psql postgres == psql -h localhost -p 
+5432 -U postgres -d postgres
